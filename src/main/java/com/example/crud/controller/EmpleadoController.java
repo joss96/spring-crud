@@ -47,7 +47,7 @@ public class EmpleadoController {
 
 	@GetMapping("/eliminar")
 	public String eliminar(@RequestParam Integer id) {
-			empleadoService.delete(id);
+			empleadoService.deleteById(id);
 		return "redirect:empleados";
 	}
 

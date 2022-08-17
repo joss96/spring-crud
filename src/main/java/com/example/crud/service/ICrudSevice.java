@@ -13,4 +13,6 @@ public interface ICrudSevice<T, ID> {
 	T update(T t);
 
 	void delete(T t);
+	
+	void deleteById(ID id);
 }
