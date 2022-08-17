@@ -50,14 +50,11 @@ public class EmpleadoRestController {
 		return ResponseEntity.ok(empleado);
 	}
 	
-	@DeleteMapping
-	public ResponseEntity<EmpleadoEntity> deleteById(@RequestBody EmpleadoEntity empleado){
-		if(empleado == null) {
-			return ResponseEntity.badRequest().build();
-		}
+	@DeleteMapping("/{id}")
+	public ResponseEntity<EmpleadoEntity> delete(@PathVariable Integer id){
 		
 		try {
-			 empleadoService.delete(empleado);			
+			 empleadoService.deleteById(id);			
 		} catch (Exception e) {
 			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
