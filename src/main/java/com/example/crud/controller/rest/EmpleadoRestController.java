@@ -9,13 +9,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.crud.entity.EmpleadoEntity;
 import com.example.crud.service.impl.EmpleadoServiceImpl;
 import com.example.crud.util.IntegerUtils;
 
-@RestController("/api/empleado")
+@RestController
+@RequestMapping("/api/empleado")
 public class EmpleadoRestController {
 	
 	@Autowired
@@ -57,7 +59,7 @@ public class EmpleadoRestController {
 		try {
 			 empleadoService.delete(empleado);			
 		} catch (Exception e) {
-			return ResponseEntity.internalServerError().build();
+			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		}
 		return ResponseEntity.ok().build();
 	}
