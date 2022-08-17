@@ -17,12 +17,11 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 
 	@Override
 	public EmpleadoEntity getById(Integer id) {
-		return empleadoRepository.findById(id)
-				.orElseThrow(() -> new NullPointerException("El empleado no existe id" + id));
+		return empleadoRepository.findById(id).orElseThrow();
 	}
 
 	@Override
-	public List<EmpleadoEntity> getALL() {
+	public List<EmpleadoEntity> getAll() {
 		return (List<EmpleadoEntity>) empleadoRepository.findAll();
 	}
 
@@ -37,7 +36,7 @@ public class EmpleadoServiceImpl implements IEmpleadoService {
 	}
 
 	@Override
-	public void delete(Integer id) {
-		empleadoRepository.deleteById(id);
+	public void delete(EmpleadoEntity t) {
+		empleadoRepository.delete(t);
 	}
 }

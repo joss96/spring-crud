@@ -13,27 +13,28 @@
 
 
 
-		<div class="card">
-			<div class="card-header">
-				Datos del empleado
-				<a class="btn btn-success pull-rigth" th:href="@{/empleados}" >Regresar</a>
-			</div>
-			<div class="card-body">
-	<form th:action="@{/guardar}" method="post" th:object="${empleado}">
+	<div class="card">
+		<div class="card-header">
+			Datos del empleado <a class="btn btn-success pull-rigth"
+				th:href="@{/empleados}">Regresar</a>
+		</div>
+		<div class="card-body">
+			<form th:action="@{/guardar}" method="post" th:object="${empleado}">
 				<div class="row">
-					<input type="hidden" name="empleadoid" id="empleadoid" th:field="*{empleadoId}">
+					<input type="hidden" name="empleadoid" id="empleadoid"
+						th:field="*{empleadoId}">
 					<div class="offset-md-2 col-12 col-md-4">
 						<label>Nombre</label> <input type="text" autofocus="autofocus"
-							class="form-control form-control-sm" th:field="*{nombre}" required="required"
-							placeholder="Ingrese el nombre del empledo" name="nombre"
-							id="nombre">
+							class="form-control form-control-sm" th:field="*{nombre}"
+							required="required" placeholder="Ingrese el nombre del empledo"
+							name="nombre" id="nombre">
 					</div>
 
 					<div class="col-md-4 col-12">
 						<label>Apellidos</label> <input type="text"
-							class="form-control form-control-sm" th:field="*{apellidos}" required="required"
-							placeholder="Ingrese el nombre del empledo" name="apellidos"
-							id="apellidos">
+							class="form-control form-control-sm" th:field="*{apellidos}"
+							required="required" placeholder="Ingrese el nombre del empledo"
+							name="apellidos" id="apellidos">
 					</div>
 
 					<div class="offset-md-2 col-12 col-md-4">
@@ -44,19 +45,19 @@
 
 					<div class="col-12 col-md-4">
 						<label>Salario</label> <input type="number"
-							class="form-control form-control-sm" th:field="*{salario}" required="required"
-							placeholder="Ingrese el nombre del empledo" name="salario"
-							id="salario">
+							class="form-control form-control-sm" th:field="*{salario}"
+							required="required" placeholder="Ingrese el nombre del empledo"
+							name="salario" id="salario">
 					</div>
 
 
 				</div>
-			<div class="col-12 text-center">
-				<button type="submit" name="Guardar" class="btn btn-success">Guardar</button>
-			</div>
-	</form>
-			</div>
+				<div class="col-12 text-center">
+					<button type="submit" name="Guardar" class="btn btn-success">Guardar</button>
+				</div>
+			</form>
 		</div>
+	</div>
 
 
 
